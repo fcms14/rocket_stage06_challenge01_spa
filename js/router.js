@@ -24,9 +24,9 @@ export class Router {
 
     async handle() {
         const { pathname } = window.location;
-        const route = this.routes[pathname] || this.routes[404]
+        const route = this.routes[pathname] || this.routes[404];
         const img = new Image;
-        img.src = this.imgs[pathname];
+        img.src = this.imgs[pathname] || this.imgs[404];
 
         fetch(route)
             .then(data => data.text())
