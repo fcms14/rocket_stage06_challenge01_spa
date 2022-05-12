@@ -18,7 +18,7 @@ body {
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
-    background-color: #000000;
+    background-color: #142f3b;
 }
 
 .background {
@@ -32,6 +32,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    animation: loading 2.5s ease-in forwards;    
 }
 
 header nav {
@@ -109,7 +111,7 @@ div .fakeButton:hover {
     width: 100%;
     height: 100%;
     display: block;
-    margin-top: clamp(13px, 2vh ,63px);
+    margin-top: clamp(13px, 2vh, 63px);
 }
 
 .content {
@@ -123,4 +125,22 @@ div .fakeButton:hover {
     color: #E1E1E6;
     font-size: 17px;
     line-height: 28px;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0;
+        background-size: 1600% 1600%;
+    }
+
+    75% {
+        opacity: 1;
+        filter: brightness(3);
+        background-size: 100% 100%;
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1);
+        background-size: 120% 120%;
+    }
 }

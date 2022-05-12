@@ -18,14 +18,17 @@ export class Router {
         event.path[0].classList.add('selected');
 
         await this.handle();
+        
     }
 
     async handle() {
         const { pathname } = window.location;
         const route = this.routes[pathname] || this.routes[404]
-        fetch(route).then(data => data.text()).then(html => {
-            document.querySelector('main').innerHTML = html;
-        })
+        fetch(route)
+            .then(data => data.text())
+            .then(html => {
+                document.querySelector('main').innerHTML = html;
+            }
+        );        
     }
-
 }
