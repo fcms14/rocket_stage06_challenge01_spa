@@ -10,5 +10,5 @@ router.add('/','/pages/home.html')
 
 router.handle();
 
-window.onpopstate = () => router.handle();
+window.onpopstate = async () => await router.handle();
 window.route = () => router.route();
